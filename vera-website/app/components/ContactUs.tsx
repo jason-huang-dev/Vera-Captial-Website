@@ -50,11 +50,6 @@ const ContactUs: React.FC = () => {
     height: '400px'
   }
 
-  const center = {
-    lat: 40.7831, // Replace with your actual latitude
-    lng: -74.3661 // Replace with your actual longitude
-  }
-
   return (
     <section className="py-16 bg-gray-50 dark:bg-gray-800">
       <div className="container mx-auto px-4">
@@ -112,15 +107,14 @@ const ContactUs: React.FC = () => {
           </div>
           <div>
             <h3 className="text-2xl font-semibold mb-4">Our Location</h3>
-            <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
-              <GoogleMap
-                mapContainerStyle={mapContainerStyle}
-                center={center}
-                zoom={10}
-              >
-                <Marker position={center} />
-              </GoogleMap>
-            </LoadScript>
+            <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1652.971315523708!2d-74.70526517420384!3d40.782398586985714!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c399620c495555%3A0x9d38b207c08e46d0!2sVera%20Capital%20Management!5e0!3m2!1sen!2sus!4v1732257222189!5m2!1sen!2sus"            width="600" 
+            height="450" 
+            style={{border:0}} 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
           </div>
         </div>
       </div>

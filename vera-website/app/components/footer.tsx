@@ -12,7 +12,7 @@ const FooterComponent: React.FC = () => {
   return (
     <footer className="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 pb-10">
       {/* Legal Section */}
-      <div className="flex justify-center items-center bg-gray-300">
+      <div className="flex mb-4 justify-center items-center bg-gray-300">
         <div className="flex justify-center items-center w-full gap-4">
           <a
             href={IMPORTANT_LINKS.FINRA_BROKERCHECK}
@@ -36,7 +36,7 @@ const FooterComponent: React.FC = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 pt-1 gap-8">
+      <div className="max-w-7xl mx-4 grid grid-cols-1 md:grid-cols-3 pt-1 gap-8">
         {/* Address Section */}
         <div>
           <h2 className="text-lg font-semibold mb-4">Address</h2>
