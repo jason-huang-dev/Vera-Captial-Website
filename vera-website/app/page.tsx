@@ -1,15 +1,14 @@
 "use client";
-import Image from 'next/image';
+import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from 'react';
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import React, { useState } from "react";
 import TopBar from "./components/navbar";
 import FooterComponent from "./components/footer";
 import HeroImageWithReviews from "./components/HeroImageWithReviews";
 import Services from "./components/Services";
 import CtaButton from "./components/CtaButton";
 import ContactUs from "./components/ContactUs";
+import AboutUs from "./components/AboutUs";
 
 type HandleClick = (
   e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement, MouseEvent>,
@@ -33,39 +32,36 @@ export default function Home() {
     }
 
     // Check if the URL is external
-    if (url.startsWith('http')) {
-      window.open(url, '_blank'); // Open the external link in a new tab
-    } else if (url === '/') {
-      window.history.pushState(null, '', '/');
+    if (url.startsWith("http")) {
+      window.open(url, "_blank"); // Open the external link in a new tab
+    } else if (url === "/") {
+      window.history.pushState(null, "", "/");
       window.location.reload(); // Refresh the page
     } else {
       // Select target section and scroll smoothly
       const targetSection = document.querySelector<HTMLElement>(url);
       if (targetSection) {
-        targetSection.scrollIntoView({ behavior: 'smooth' });
+        targetSection.scrollIntoView({ behavior: "smooth" });
       }
     }
   };
-  
+
   return (
     <div>
-    <TopBar 
-      handleClick={handleClick}
-      openNavigation={openNavigation} 
-      toggleNavigation={toggleNavigation}  />
+      <TopBar
+        handleClick={handleClick}
+        openNavigation={openNavigation}
+        toggleNavigation={toggleNavigation}
+      />
 
-    <main className="flex-grow container mx-auto px-4 py-16">
-    <HeroImageWithReviews />
-
-    <Services />
-
-    <ContactUs />
-
-    <CtaButton />
-
-    </main>
-
-    <FooterComponent />
-  </div>
+      <main className="flex-grow container mx-auto px-4 py-16">
+        <HeroImageWithReviews />
+        <Services />
+        <AboutUs />
+        <ContactUs />
+        <CtaButton />
+      </main>
+      <FooterComponent />
+    </div>
   );
 }
