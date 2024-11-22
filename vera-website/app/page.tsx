@@ -2,13 +2,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-import TopBar from "./components/navbar";
-import FooterComponent from "./components/footer";
-import HeroImageWithReviews from "./components/HeroImageWithReviews";
-import Services from "./components/Services";
-import CtaButton from "./components/CtaButton";
-import ContactUs from "./components/ContactUs";
-import AboutUs from "./components/AboutUs";
+import TopBar from "./components_v1/navbar";
+import FooterComponent from "./components_v1/footer";
+import HeroImageWithReviews from "./components_v1/HeroImageWithReviews";
+import Services from "./components_v1/Services";
+import CtaButton from "./components_v1/CtaButton";
+import ContactUs from "./components_v1/ContactUs";
+import AboutUs from "./components_v1/AboutUs";
 
 type HandleClick = (
   e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement, MouseEvent>,
