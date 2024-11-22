@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    /* Updated Branding Colors */
+    --background: hsla(209, 90%, 32%, 1); /* polynesian-blue */
+    --foreground: hsla(0, 0%, 0%, 1); /* black */
+    --card: hsla(208, 94%, 32%, 1); /* lapis-lazuli */
+    --card-foreground: hsla(0, 0%, 0%, 1); /* black */
+    --popover: hsla(188, 67%, 30%, 1); /* caribbean-current */
+    --popover-foreground: hsla(0, 0%, 0%, 1); /* black */
+    --primary: hsla(208, 88%, 26%, 1); /* indigo-dye */
+    --primary-foreground: hsla(0, 0%, 98%, 1); /* white */
+    --secondary: hsla(208, 88%, 26%, 1); /* indigo-dye */
+    --secondary-foreground: hsla(0, 0%, 98%, 1); /* white */
+    --muted: hsla(208, 94%, 32%, 1); /* lapis-lazuli */
+    --muted-foreground: hsla(0, 0%, 98%, 1); /* white */
+    --accent: hsla(188, 67%, 30%, 1); /* caribbean-current */
+    --accent-foreground: hsla(0, 0%, 98%, 1); /* white */
+    --destructive: hsla(0, 84.2%, 60.2%, 1); /* Red */
+    --destructive-foreground: hsla(0, 0%, 98%, 1); /* white */
+    --border: hsla(208, 94%, 32%, 1); /* lapis-lazuli */
+    --input: hsla(208, 94%, 32%, 1); /* lapis-lazuli */
+    --ring: hsla(0, 0%, 98%, 1); /* white */
+    --chart-1: hsla(12, 76%, 61%, 1); /* Example color */
+    --chart-2: hsla(173, 58%, 39%, 1); /* Example color */
+    --chart-3: hsla(197, 37%, 24%, 1); /* Example color */
+    --chart-4: hsla(43, 74%, 66%, 1); /* Example color */
+    --chart-5: hsla(27, 87%, 67%, 1); /* Example color */
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: hsla(0, 0%, 98%, 1); /* white */
+    --foreground: hsla(208, 94%, 32%, 1); /* lapis-lazuli */
+    --card: hsla(0, 0%, 98%, 1); /* white */
+    --card-foreground: hsla(208, 94%, 32%, 1); /* lapis-lazuli */
+    --popover: hsla(0, 0%, 98%, 1); /* white */
+    --popover-foreground: hsla(208, 94%, 32%, 1); /* lapis-lazuli */
+    --primary: hsla(0, 0%, 98%, 1); /* white */
+    --primary-foreground: hsla(208, 94%, 32%, 1); /* lapis-lazuli */
+    --secondary: hsla(208, 94%, 32%, 1); /* lapis-lazuli */
+    --secondary-foreground: hsla(0, 0%, 98%, 1); /* white */
+    --muted: hsla(0, 0%, 98%, 1); /* white */
+    --muted-foreground: hsla(208, 94%, 32%, 1); /* lapis-lazuli */
+    --accent: hsla(188, 67%, 30%, 1); /* caribbean-current */
+    --accent-foreground: hsla(0, 0%, 98%, 1); /* white */
+    --destructive: hsla(0, 62.8%, 30.6%, 1); /* red */
+    --destructive-foreground: hsla(0, 0%, 98%, 1); /* white */
+    --border: hsla(0, 0%, 98%, 1); /* white */
+    --input: hsla(0, 0%, 98%, 1); /* white */
+    --ring: hsla(208, 94%, 32%, 1); /* lapis-lazuli */
+    --chart-1: hsla(220, 70%, 50%, 1); /* Example color */
+    --chart-2: hsla(160, 60%, 45%, 1); /* Example color */
+    --chart-3: hsla(30, 80%, 55%, 1); /* Example color */
+    --chart-4: hsla(280, 65%, 60%, 1); /* Example color */
+    --chart-5: hsla(340, 75%, 55%, 1); /* Example color */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}

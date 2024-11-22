@@ -10,6 +10,29 @@ const config: Config = {
   theme: {
   	extend: {
   		colors: {
+			/* Colors */
+			blue1: "#085299ff",  // Polynesian Blue
+			blue2: "#04294dff",  // Oxford Blue
+			black: "#000000ff",   // Black
+			blue3: "#05579dff",  // Lapis Lazuli
+			blue4: "#074e8dff",  // Polynesian Blue 2
+			blue5: "#08457cff",  // Indigo Dye
+			blue6: "#115b7dff",  // Lapis Lazuli 2
+			blue7: "#19717eff",  // Caribbean Current
+			blue8: "#2e7e8aff",  // Teal
+			blue9: "#418a95ff",  // Blue Munsell
+			
+			/* Gradients */
+			gradientTop: "linear-gradient(0deg, blue1, blue2, black, blue3, blue4, blue5, blue6, blue7, blue8, blue9)",
+			gradientRight: "linear-gradient(90deg, blue1, blue2, black, blue3, blue4, blue5, blue6, blue7, blue8, blue9)",
+			gradientBottom: "linear-gradient(180deg, blue1, blue2, black, blue3, blue4, blue5, blue6, blue7, blue8, blue9)",
+			gradientLeft: "linear-gradient(270deg, blue1, blue2, black, blue3, blue4, blue5, blue6, blue7, blue8, blue9)",
+			gradientTopRight: "linear-gradient(45deg, blue1, blue2, black, blue3, blue4, blue5, blue6, blue7, blue8, blue9)",
+			gradientBottomRight: "linear-gradient(135deg, blue1, blue2, black, blue3, blue4, blue5, blue6, blue7, blue8, blue9)",
+			gradientTopLeft: "linear-gradient(225deg, blue1, blue2, black, blue3, blue4, blue5, blue6, blue7, blue8, blue9)",
+			gradientBottomLeft: "linear-gradient(315deg, blue1, blue2, black, blue3, blue4, blue5, blue6, blue7, blue8, blue9)",
+			gradientRadial: "radial-gradient(blue1, blue2, black, blue3, blue4, blue5, blue6, blue7, blue8, blue9)",
+
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
