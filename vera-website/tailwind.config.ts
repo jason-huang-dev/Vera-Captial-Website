@@ -74,11 +74,33 @@ const config: Config = {
   				'5': 'hsl(var(--chart-5))'
   			}
   		},
+		backgroundImage: {
+			logo: "linear-gradient(165deg, rgba(20,20,20,0.8) 100%, rgba(109,109,116,0.8) 100%), url('/app/assets/images/logo.png')",
+			background: "linear-gradient(165deg, rgba(20,20,20,0.8) 100%, rgba(109,109,116,0.8) 100%), url('/app/assets/images/background.png')",
+		},
   		borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+
+		  // Animations
+		  keyframes: {
+			fadeIn: {
+			  '0%': { opacity: '0' },
+			  '100%': { opacity: '1' },
+			},
+			slideIn: {
+			  '0%': { transform: 'translateX(-100%)' },
+			  '100%': { transform: 'translateX(0)' },
+			},
+		  },
+		  animation: {
+			fadeIn_1: 'fadeIn 1s ease-in-out', 
+			fadeIn_2: 'fadeIn 2s ease-in-out', 
+			fadeIn_3: 'fadeIn 3s ease-in-out', 
+			slideIn: 'slideIn 1s ease-out', 
+		  },
   	}
   },
   plugins: [require("tailwindcss-animate")],

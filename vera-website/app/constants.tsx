@@ -27,25 +27,25 @@ FINRA_BROKERCHECK: "https://brokercheck.finra.org/individual/summary/5980333",
 export const services = [{
   title: "Holistic Approach",
   description: "We take a comprehensive view of your financial situation, considering all aspects of your life and goals.",
-  icon: "🔍"
+  icon: ""
 },
 {
   title: "Personalized Planning",
   description: "Every financial plan is tailored to your unique circumstances and aspirations.",
-  icon: "📊"
+  icon: ""
 },
 {
   title: "Retirement Strategies",
   description: "We help you build and maintain a robust strategy for a comfortable retirement.",
-  icon: "🏖️"
+  icon: ""
 },
 {
   title: "Risk Management",
   description: "We identify potential risks and implement strategies to protect your financial future.",
-  icon: "🛡️"
+  icon: ""
 },
 {
   title: "Ongoing Support",
   description: "Our team provides continuous guidance and adjusts your plan as your life changes.",
-  icon: "🤝"
+  icon: ""
 }];

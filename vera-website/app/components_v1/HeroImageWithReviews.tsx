@@ -5,6 +5,8 @@ import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import { COMPANY_INFO } from "../constants";
 import useIsMobile from "../hooks/useIsMobile";
+import {background} from '../assets'
+import Image from "next/image";
 
 export default function HeroImageWithReviews() {
   const isMobile = useIsMobile();
@@ -51,7 +53,7 @@ export default function HeroImageWithReviews() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className=" flex items-center"
+                    className="bg-white flex items-center"
                   >
                     <Phone className="w-5 h-5 mr-2" />
                     Give us a call
@@ -73,11 +75,13 @@ export default function HeroImageWithReviews() {
           </div>
           {/* Col */}
           <div className="relative ms-4">
-            <img
-              className="w-full rounded-md"
-              src="https://placehold.co/900x800"
-              alt="Image Description"
-            />
+             <Image
+            src={background}
+            alt="background"
+            width={900}
+            height={800}
+            className="w-full rounded-md"
+          />
           </div>
           {/* End Col */}
         </div>

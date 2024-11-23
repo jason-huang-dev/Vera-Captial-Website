@@ -15,7 +15,6 @@ import {
   Phone,
   VoicemailIcon as Fax,
 } from "lucide-react";
-import DisclaimerCollapsible from "./DisclaimerCollapsible";
 
 const FooterComponent: React.FC = () => {
   // Function to construct Google Maps URL
@@ -168,7 +167,20 @@ const FooterComponent: React.FC = () => {
 
       {/* Disclaimer Section */}
       <div className="mt-8 mx-4 md:px-20">
-        <DisclaimerCollapsible />
+        <h2 className="text-lg font-semibold mb-4">Disclaimer</h2>
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 space-y-2">
+          <span>
+            Securities and Advisory services offered through GWN Securities, Inc., Member FINRA/SIPC, a Registered Investment Advisor. 
+            11440 N. Jog Road, Palm Beach Gardens, FL 33418. (561) 472-2700. Vera Capital Management and GWN Securities, Inc. are separate companies.
+          </span>
+          <span>
+            <strong>PLEASE NOTE:</strong> The information being provided is strictly as a courtesy. When you link to any of the web sites provided here, 
+            you are leaving this web site. We make no representation as to the completeness or accuracy of information provided at these web sites. 
+            Nor is the company liable for any direct or indirect technical or system issues or any consequences arising out of your access to or your use of 
+            third-party technologies, web sites, information and programs made available through this web site. When you access one of these web sites, 
+            you are leaving our web site and assume total responsibility and risk for your use of the web sites you are linking to.
+          </span>
+        </p>
       </div>
     </footer>
   );

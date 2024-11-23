@@ -47,7 +47,7 @@ export default function Home() {
   };
 
   return (
-    <div>
+    <div className="bg-white">
       <TopBar
         handleClick={handleClick}
         openNavigation={openNavigation}

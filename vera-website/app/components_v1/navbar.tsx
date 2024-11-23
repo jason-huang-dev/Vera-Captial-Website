@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { usePathname } from "next/navigation"; // Updated import
+import { usePathname } from "next/navigation";
 import { logo } from "../assets";
 import MenuSvg from "./MenuSvg";
 import { ChevronDown } from "lucide-react";
@@ -29,7 +29,7 @@ const Topbar: React.FC<TopbarProps> = ({
   toggleNavigation,
 }) => {
   const [versionsOpen, setVersionsOpen] = useState(false);
-  const pathname = usePathname(); // Using usePathname instead of useRouter
+  const pathname = usePathname();
 
   const navigation: NavigationItem[] = [
     { id: 1, title: "Home", url: "#hero", onlyMobile: false },
@@ -51,11 +51,12 @@ const Topbar: React.FC<TopbarProps> = ({
 
   return (
     <div className="fixed top-0 left-0 w-full z-50 min-w-[380px]">
-      <div className="bg-default dark:bg-dark bg-white h-16 flex items-center justify-between px-5 lg:px-7.5 xl:px-10">
+      <div className="bg-default dark:bg-dark bg-white h-16 flex items-center justify-between px-5 lg:px-7 xl:px-10">
+        {/* Logo */}
         <a
           href="#hero"
           onClick={(e) => handleClick(e, "#hero")}
-          className="font-code text-sm md:text-md uppercase lg:px-4 lg:mx-1.5 lg:leading-5 xl:px-12 transition-colors hover:underline focus:underline"
+          className="flex-shrink-0"
         >
           <Image
             src={logo}
@@ -66,45 +67,64 @@ const Topbar: React.FC<TopbarProps> = ({
           />
         </a>
 
+        {/* Navigation Links */}
         <nav
           className={`${
-            openNavigation ? "flex bg-default dark:bg-dark" : "hidden"
-          } fixed top-16 pt-2 left-0 bg-white right-0 bottom-0 lg:static lg:flex lg:mx-auto`}
+            openNavigation
+              ? "flex flex-col justify-center items-center bg-default dark:bg-dark"
+              : "hidden"
+          } fixed top-16 pt-2 left-0 bg-white right-0 bottom-0 z-40 lg:static lg:flex lg:items-center lg:space-x-4`}
         >
-          <div className="relative">
-            <button
-              onClick={toggleVersions}
-              className="flex items-center font-code text-md lg:text-sm uppercase transition-colors px-6 py-6 md:py-8 lg:py-2.5 lg:px-4 lg:mx-1.5 lg:leading-5 xl:px-12"
-            >
-              Versions <ChevronDown className="ml-1 h-4 w-4" />
-            </button>
-            {versionsOpen && (
-              <div className="absolute top-full left-0 bg-white dark:bg-gray-800 shadow-md rounded-md py-2 mt-1">
+          <div className="flex flex-col items-center space-y-4 lg:flex-row lg:space-y-0 lg:space-x-4">
+            {/* Versions Dropdown (only on desktop) */}
+            <div className="relative hidden lg:block">
+              <button
+                onClick={toggleVersions}
+                className="flex items-center font-code text-sm uppercase transition-colors px-4 py-2"
+              >
+                Versions <ChevronDown className="ml-1 h-4 w-4" />
+              </button>
+              {versionsOpen && (
+                <div className="absolute top-full left-0 bg-white dark:bg-gray-800 shadow-md rounded-md py-2 mt-1">
+                  {versionOptions.map((option) => (
+                    <a
+                      key={option.href}
+                      href={option.href}
+                      className={`block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 ${
+                        pathname === option.href ? "bg-gray-200" : ""
+                      }`}
+                    >
+                      {option.name}
+                    </a>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Versions Links (only on mobile when menu is open) */}
+            {openNavigation && (
+              <div className="flex flex-col items-center space-y-4 lg:hidden">
                 {versionOptions.map((option) => (
                   <a
                     key={option.href}
                     href={option.href}
-                    className={`block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 ${
-                      pathname === option.href ? "bg-gray-200" : ""
-                    }`}
+                    className="font-code text-sm uppercase transition-colors px-4 py-2 hover:underline text-center"
                   >
                     {option.name}
                   </a>
                 ))}
               </div>
             )}
-          </div>
-          <div className="relative z-2 flex flex-col items-center justify-center m-auto lg:flex-row">
+
+            {/* Other Navigation Items */}
             {navigation.map((item) => (
               <a
                 key={item.id}
                 href={item.url}
                 onClick={(e) => handleClick(e, item.url)}
-                className={`block relative font-code text-md lg:text-sm uppercase transition-colors ${
+                className={`font-code text-sm uppercase transition-colors ${
                   item.onlyMobile ? "lg:hidden" : ""
-                } px-6 py-6 md:py-8 lg:py-2.5 lg:px-4 lg:mx-1.5 lg:leading-5 xl:px-12 ${
-                  openNavigation ? "hover:underline focus:underline" : ""
-                }`}
+                } px-4 py-2 hover:underline text-center`}
               >
                 {item.title}
               </a>
@@ -112,15 +132,17 @@ const Topbar: React.FC<TopbarProps> = ({
           </div>
         </nav>
 
-        <div className="flex space-x-4 px-2">
+        {/* Schedule Appointment Button */}
+        <div className="flex-shrink-0">
           <button
             onClick={(e) => handleClick(e, "#join")}
-            className="flex items-center justify-center hover:bg-gray-300 dark:hover:bg-gray-800 bg-transparent border px-4 py-2 rounded-2xl hover:bg-opacity-20 transition-colors duration-200 whitespace-nowrap"
+            className="flex items-center justify-center bg-transparent border px-4 ml-4 py-2 rounded-2xl hover:bg-gray-300 dark:hover:bg-gray-800 transition-colors duration-200 whitespace-nowrap"
           >
             Schedule Appointment
           </button>
         </div>
 
+        {/* Mobile Menu Icon */}
         <MenuSvg
           toggleNavigation={toggleNavigation}
           openNavigation={openNavigation}
