@@ -1,55 +1,63 @@
-export default function V2() {
+"use client"
+import FooterComponent from "@/app/components_v3/footer";
+import BannerComponent from "@/app/components_v3/Banner";
+import Topbar from "@/app/components_v3/navbar";
+import AboutUs from "@/app/components_v3/AboutUs";
+import {logo, background} from "@/app/assets";
+import React, { useState } from "react";
+
+type HandleClick = (
+  e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement, MouseEvent>,
+  url: string
+) => void;
+
+export default function V3() {
+  // Define the state with explicit type annotation
+  const [openNavigation, setOpenNavigation] = useState<boolean>(false);
+
+  // Toggle the navigation menu
+  const toggleNavigation = (): void => {
+    setOpenNavigation((prev) => !prev);
+  };
+
+  // Handle link clicks with smooth scrolling and page refresh for Home
+  const handleClick: HandleClick = (e, url) => {
+    e.preventDefault();
+    if (openNavigation) {
+      toggleNavigation();
+    }
+
+    // Check if the URL is external
+    if (url.startsWith("http")) {
+      window.open(url, "_blank"); // Open the external link in a new tab
+    } else if (url === "/") {
+      window.history.pushState(null, "", "/");
+      window.location.reload(); // Refresh the page
+    } else {
+      // Select target section and scroll smoothly
+      const targetSection = document.querySelector<HTMLElement>(url);
+      if (targetSection) {
+        targetSection.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  };
+
   return (
     <div>
-      <footer className="bg-secondary text-secondary-foreground py-8">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-xl font-bold mb-2">Address</h3>
-              <p>
-                Vera Capital Management
-                <br />
-                1 Mill Ridge Lane., Suite 201
-                <br />
-                Chester, NJ 07930
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-2">Contact</h3>
-              <p>
-                Email: avera@veracapitalmanagement.com
-                <br />
-                Phone: 908-888-2878
-                <br />
-                Fax: 877-253-6960
-              </p>
-            </div>
-            <div>
-              <h3 className="text-xl font-bold mb-2">Follow Us</h3>
-              <div className="flex space-x-4">
-                <a href="#" className="hover:text-primary">
-                  Facebook
-                </a>
-                <a href="#" className="hover:text-primary">
-                  X
-                </a>
-                <a href="#" className="hover:text-primary">
-                  LinkedIn
-                </a>
-              </div>
-            </div>
-          </div>
-          <div className="mt-8 text-sm">
-            <p>
-              Securities and Advisory services offered through GWN Securities,
-              Inc., Member FINRA/SIPC, a Registered Investment Advisor. 11440 N.
-              Jog Road, Palm Beach Gardens, FL 33418. (561) 472-2700. Vera
-              Capital Management and GWN Securities, Inc. are separate
-              companies.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Topbar
+        handleClick={handleClick}
+        openNavigation={openNavigation}
+        toggleNavigation={toggleNavigation}
+      />
+
+      <BannerComponent
+        backgroundImage={background}
+        logoImage={logo}
+      />
+      <AboutUs/>
+
+
+      <FooterComponent />
     </div>
   );
 }
