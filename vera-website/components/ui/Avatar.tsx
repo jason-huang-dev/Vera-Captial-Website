@@ -23,17 +23,19 @@ const Avatar: React.FC<AvatarProps> = ({
   return (
     <figure className="text-center">
       <div
-        className={`relative ${borderWidth} ${borderColor} rounded-full w-${width} h-${height} m-auto`}
+        className={`relative rounded-full m-auto 
+          w-[${width}px] h-[${height}px] 
+          sm:w-[300px] sm:h-[300px] lg:w-[450px] lg:h-[450px]`}
       >
         <Image
           src={src}
           alt={alt}
           width={width}  // Use numeric value
           height={height}  // Use numeric value
-          className="object-cover rounded-full"
+          className={`object-cover rounded-full ${borderWidth} ${borderColor}`}
         />
       </div>
-      {caption && <figcaption className="mt-2 text-lg text-gray-800 dark:text-gray-300">{caption}</figcaption>}
+      {caption && <figcaption className="mt-2 text-xl font-lora italic text-gray-800 dark:text-gray-300">{caption}</figcaption>}
     </figure>
   );
 };

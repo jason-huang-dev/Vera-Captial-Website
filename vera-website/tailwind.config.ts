@@ -84,23 +84,28 @@ const config: Config = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
 
-		  // Animations
-		  keyframes: {
-			fadeIn: {
-			  '0%': { opacity: '0' },
-			  '100%': { opacity: '1' },
-			},
-			slideIn: {
-			  '0%': { transform: 'translateX(-100%)' },
-			  '100%': { transform: 'translateX(0)' },
-			},
-		  },
-		  animation: {
-			fadeIn_1: 'fadeIn 1s ease-in-out', 
-			fadeIn_2: 'fadeIn 2s ease-in-out', 
-			fadeIn_3: 'fadeIn 3s ease-in-out', 
-			slideIn: 'slideIn 1s ease-out', 
-		  },
+		// Animations
+		keyframes: {
+		fadeIn: {
+			'0%': { opacity: '0' },
+			'100%': { opacity: '1' },
+		},
+		slideIn: {
+			'0%': { transform: 'translateX(-100%)' },
+			'100%': { transform: 'translateX(0)' },
+		},
+		},
+		animation: {
+		fadeIn_1: 'fadeIn 1s ease-in-out', 
+		fadeIn_2: 'fadeIn 2s ease-in-out', 
+		fadeIn_3: 'fadeIn 3s ease-in-out', 
+		slideIn: 'slideIn 1s ease-out', 
+		},
+
+		// fonts
+		fontFamily: {
+			lora: ['Lora'],
+		},
   	}
   },
   plugins: [require("tailwindcss-animate")],
