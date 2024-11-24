@@ -9,6 +9,7 @@ import Services from "./components_v1/Services";
 import CtaButton from "./components_v1/CtaButton";
 import ContactUs from "./components_v1/ContactUs";
 import AboutUs from "./components_v1/AboutUs";
+import { background2 } from "./assets";
 
 type HandleClick = (
   e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement, MouseEvent>,
@@ -46,8 +47,22 @@ export default function Home() {
     }
   };
 
+  const backgroundStyle = {
+    backgroundImage: `
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.3)),
+      url(${background2.src})
+    `,
+    backgroundSize: "cover",  // Ensures the background image covers the entire div
+    backgroundPosition: "center", // Centers the image
+    backgroundRepeat: "no-repeat", // Prevents repetition
+  };
+  
+
   return (
-    <div className="bg-white">
+    <div 
+      className="bg-white"
+      style={backgroundStyle}
+    >
       <TopBar
         handleClick={handleClick}
         openNavigation={openNavigation}
