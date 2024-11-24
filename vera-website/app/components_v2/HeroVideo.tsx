@@ -2,16 +2,19 @@
 
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Hero() {
   return (
     <div className="relative bg-gradient-to-r from-blue-900 to-blue-600 h-screen w-full flex items-center justify-center">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img
+        <Image
           src="https://source.unsplash.com/1600x900/?family,travel"
           alt="Family Travel"
-          className="w-full h-full object-cover"
+          fill // Automatically fills the parent container
+          className="object-cover"
+          priority // Ensures the image is optimized and loaded quickly
         />
         <div className="absolute inset-0 bg-black/50"></div>
       </div>

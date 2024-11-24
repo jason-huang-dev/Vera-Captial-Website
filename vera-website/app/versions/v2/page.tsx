@@ -1,6 +1,4 @@
 "use client";
-import Image from "next/image";
-import Link from "next/link";
 import React, { useState } from "react";
 import TopBar from "@/app/components_v2/navbar";
 import FooterComponent from "@/app/components_v2/footer";
