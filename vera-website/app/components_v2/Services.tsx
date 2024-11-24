@@ -23,13 +23,6 @@ const Services: React.FC = () => {
             <Card key={index} className="h-full">
               <CardHeader>
                 <CardTitle className="flex items-center text-2xl">
-                  <span
-                    className="text-4xl mr-4"
-                    role="img"
-                    aria-hidden="true"
-                  >
-                    {service.icon}
-                  </span>
                   <span className="text-gray-800 dark:text-gray-100">{service.title}</span>
                 </CardTitle>
               </CardHeader>
