@@ -1,4 +1,5 @@
 import { StaticImageData } from "next/image";
+import Image from "next/image";
 
 interface BannerProps {
   backgroundImage: string | StaticImageData; // Accept both types
@@ -32,11 +33,14 @@ export default function BannerComponent({
 
       {/* Logo */}
       <div className="relative z-10 flex flex-col items-center">
-        <img
-          src={typeof logoImage === "string" ? logoImage : logoImage.src}
-          alt="Company Logo"
-          className="w-96 h-96 md:w-140 md:h-140 object-contain animate-fadeIn_2"
-        />
+        <div className="w-96 h-96 md:w-[140px] md:h-[140px] animate-fadeIn_2">
+          <Image
+            src={logoImage}
+            alt="Company Logo"
+            layout="intrinsic"
+            objectFit="contain"
+          />
+        </div>
         {title && <h1 className="mt-4 text-2xl md:text-4xl font-bold text-white">{title}</h1>}
         {subtitle && <p className="mt-2 text-lg text-gray-300">{subtitle}</p>}
       </div>

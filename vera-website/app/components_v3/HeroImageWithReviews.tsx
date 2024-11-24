@@ -1,6 +1,7 @@
 // components/HeroImageWithReviews.jsx
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import { COMPANY_INFO } from "../constants";
@@ -73,10 +74,14 @@ export default function HeroImageWithReviews() {
           </div>
           {/* Col */}
           <div className="relative ms-4">
-            <img
+            <Image
               className="w-full rounded-md"
               src="https://placehold.co/900x800"
               alt="Image Description"
+              width={900} // Replace with actual width
+              height={800} // Replace with actual height
+              layout="intrinsic"
+              objectFit="cover"
             />
           </div>
           {/* End Col */}

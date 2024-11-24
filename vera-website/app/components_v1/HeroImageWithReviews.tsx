@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import { COMPANY_INFO } from "../constants";
 import useIsMobile from "../hooks/useIsMobile";
-import {background, logo} from '../assets'
+import {logo} from '../assets'
 import Image from "next/image";
 
 export default function HeroImageWithReviews() {
