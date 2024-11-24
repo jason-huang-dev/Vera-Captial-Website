@@ -1,6 +1,7 @@
 "use client"
 import FooterComponent from "@/app/components_v3/footer";
 import BannerComponent from "@/app/components_v3/Banner";
+import ServicesSection from "@/app/components_v3/Services";
 import Topbar from "@/app/components_v3/navbar";
 import AboutUs from "@/app/components_v3/AboutUs";
 import {logo, background} from "@/app/assets";
@@ -55,6 +56,7 @@ export default function V3() {
         logoImage={logo}
       />
       <AboutUs/>
+      <ServicesSection/>
 
 
       <FooterComponent />

@@ -35,8 +35,6 @@ const Topbar: React.FC<TopbarProps> = ({
     { id: 1, title: "Home", url: "#hero", onlyMobile: false },
     { id: 2, title: "Services", url: "#services", onlyMobile: false },
     { id: 3, title: "Contact us", url: "#contact", onlyMobile: false },
-    { id: 4, title: "Team", url: "/team", onlyMobile: false },
-    { id: 5, title: "Log in", url: "/login", onlyMobile: false },
   ];
 
   const versionOptions = [

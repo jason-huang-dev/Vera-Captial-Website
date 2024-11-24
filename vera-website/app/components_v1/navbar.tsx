@@ -35,8 +35,6 @@ const Topbar: React.FC<TopbarProps> = ({
     { id: 1, title: "Home", url: "#hero", onlyMobile: false },
     { id: 2, title: "Services", url: "#services", onlyMobile: false },
     { id: 3, title: "Contact us", url: "#contact", onlyMobile: false },
-    { id: 4, title: "Team", url: "/team", onlyMobile: false },
-    { id: 5, title: "Log in", url: "/login", onlyMobile: false },
   ];
 
   const versionOptions = [
@@ -51,7 +49,7 @@ const Topbar: React.FC<TopbarProps> = ({
 
   return (
     <div className="fixed top-0 left-0 w-full z-50 min-w-[380px]">
-      <div className="bg-default dark:bg-dark bg-white h-16 flex items-center justify-between px-5 lg:px-7 xl:px-10">
+      <div className="bg-default dark:bg-dark bg-blue-900 h-20 flex items-center justify-between px-5 lg:px-7 xl:px-10">
         {/* Logo */}
         <a
           href="#hero"
@@ -61,8 +59,8 @@ const Topbar: React.FC<TopbarProps> = ({
           <Image
             src={logo}
             alt="Logo"
-            width={180}
-            height={50}
+            width={960}
+            height={200}
             className="h-10 w-auto"
           />
         </a>
@@ -73,11 +71,11 @@ const Topbar: React.FC<TopbarProps> = ({
             openNavigation
               ? "flex flex-col justify-center items-center bg-default dark:bg-dark"
               : "hidden"
-          } fixed top-16 pt-2 left-0 bg-white right-0 bottom-0 z-40 lg:static lg:flex lg:items-center lg:space-x-4`}
+          } fixed top-16 pt-2 left-0 bg-inherit text-blue-50 right-0 bottom-0 z-40 lg:static lg:flex lg:items-center lg:space-x-4`}
         >
           <div className="flex flex-col items-center space-y-4 lg:flex-row lg:space-y-0 lg:space-x-4">
             {/* Versions Dropdown (only on desktop) */}
-            <div className="relative hidden lg:block">
+            <div className="relative hidden bg-blue-900 lg:block">
               <button
                 onClick={toggleVersions}
                 className="flex items-center font-code text-sm uppercase transition-colors px-4 py-2"
@@ -85,13 +83,13 @@ const Topbar: React.FC<TopbarProps> = ({
                 Versions <ChevronDown className="ml-1 h-4 w-4" />
               </button>
               {versionsOpen && (
-                <div className="absolute top-full left-0 bg-white dark:bg-gray-800 shadow-md rounded-md py-2 mt-1">
+                <div className="absolute top-full left-0 bg-blue-900 dark:bg-gray-800 shadow-md rounded-md py-2 mt-1">
                   {versionOptions.map((option) => (
                     <a
                       key={option.href}
                       href={option.href}
                       className={`block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 ${
-                        pathname === option.href ? "bg-gray-200" : ""
+                        pathname === option.href ? "bg-blue-700" : ""
                       }`}
                     >
                       {option.name}
@@ -136,7 +134,7 @@ const Topbar: React.FC<TopbarProps> = ({
         <div className="flex-shrink-0">
           <button
             onClick={(e) => handleClick(e, "#join")}
-            className="flex items-center justify-center bg-transparent border px-4 ml-4 py-2 rounded-2xl hover:bg-gray-300 dark:hover:bg-gray-800 transition-colors duration-200 whitespace-nowrap"
+            className="flex items-center text-blue-50 justify-center bg-transparent border px-4 ml-4 py-2 rounded-2xl hover:bg-gray-400 dark:hover:bg-gray-800 transition-colors duration-200 whitespace-nowrap"
           >
             Schedule Appointment
           </button>
