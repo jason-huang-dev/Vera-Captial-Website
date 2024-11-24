@@ -48,7 +48,11 @@ export default function Home() {
         openNavigation={openNavigation}
         toggleNavigation={toggleNavigation}
       />
-      <Hero />
+      <Hero
+        handleClick={handleClick}
+        openNavigation={openNavigation}
+        toggleNavigation={toggleNavigation}
+      />
       <CarouselBanner />
       <main className="bg-white flex-grow container mx-auto px-4 py-16">
         {/* <AboutUs /> */}

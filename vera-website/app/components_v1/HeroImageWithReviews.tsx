@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
 import { COMPANY_INFO } from "../constants";
 import useIsMobile from "../hooks/useIsMobile";
-import {logo} from '../assets'
+import { logo } from "../assets";
 import Image from "next/image";
 
 export default function HeroImageWithReviews() {
@@ -26,7 +26,7 @@ export default function HeroImageWithReviews() {
         <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
           {/* Col */}
           <div className="relative ms-4">
-             <Image
+            <Image
               src={logo}
               alt="background"
               width={900}
@@ -64,7 +64,7 @@ export default function HeroImageWithReviews() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="bg-white flex items-center"
+                    className="bg-white flex items-center  transition-colors duration-200"
                   >
                     <Phone className="w-5 h-5 mr-2" />
                     Give us a call
@@ -72,10 +72,9 @@ export default function HeroImageWithReviews() {
                 </a>
               ) : (
                 <Button
-                  variant="outline"
                   size="lg"
                   onClick={handleButtonClick}
-                  className="hover:underline flex items-center bg-slate-400"
+                  className="flex items-center bg-white text-black transition-colors duration-200 hover:bg-slate-400"
                   aria-label={`Show phone number`}
                 >
                   <Phone className="w-5 h-5 mr-2" />

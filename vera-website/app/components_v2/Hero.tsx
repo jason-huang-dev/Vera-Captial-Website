@@ -5,9 +5,22 @@ import Link from "next/link";
 import Image from "next/image";
 import { background } from "../assets";
 
-export default function Hero() {
+type HeroProps = {
+  handleClick: (
+    e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement, MouseEvent>,
+    url: string
+  ) => void;
+  openNavigation: boolean;
+  toggleNavigation: () => void;
+};
+
+export default function Hero({
+  handleClick,
+  openNavigation,
+  toggleNavigation,
+}: HeroProps) {
   return (
-    <div className="relative bg-gradient-to-r from-blue-900 to-blue-600 min-h-[80vh] w-full flex items-center justify-center scroll-smooth">
+    <div className="relative bg-gradient-to-r from-blue-900 to-blue-600 min-h-[80vh] md:h-screen w-full flex items-center justify-center">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
@@ -37,7 +50,7 @@ export default function Hero() {
         {/* Call-to-Action Button */}
         <div className="flex justify-center sm:justify-start">
           <Link href="/basics">
-            <Button className="bg-white text-blue-900 py-4 px-6 rounded-lg font-semibold text-lg">
+            <Button className="flex items-center justify-center px-4 py-2 rounded-2xl bg-white hover:bg-gray-300 text-black transition-colors duration-200 whitespace-nowrap">
               Schedule Appointment
             </Button>
           </Link>
@@ -46,34 +59,28 @@ export default function Hero() {
         {/* Secondary Buttons */}
         <div className="mt-6 flex flex-wrap justify-center sm:justify-start gap-4">
           {/* Insure Button */}
-          <Link href="#carousel-banner">
-            <Button
-              variant="outline"
-              className="text-white border-white hover:bg-white hover:text-blue-600"
-            >
-              Insure ↓
-            </Button>
-          </Link>
+          <Button
+            className="flex items-center justify-center p-4 rounded-2xl bg-gray-900 hover:bg-gray-700 text-white transition-colors duration-200 whitespace-nowrap"
+            onClick={(e) => handleClick(e, "#carousel-banner")}
+          >
+            Insure ↓
+          </Button>
 
           {/* Invest Button */}
-          <Link href="#carousel-banner">
-            <Button
-              variant="outline"
-              className="text-white border-white hover:bg-white hover:text-blue-600"
-            >
-              Invest ↓
-            </Button>
-          </Link>
+          <Button
+            className="flex items-center justify-center p-4 rounded-2xl bg-gray-900 hover:bg-gray-700 text-white transition-colors duration-200 whitespace-nowrap"
+            onClick={(e) => handleClick(e, "#carousel-banner")}
+          >
+            Invest ↓
+          </Button>
 
           {/* Retire Button */}
-          <Link href="#carousel-banner">
-            <Button
-              variant="outline"
-              className="text-white border-white hover:bg-white hover:text-blue-600"
-            >
-              Retire ↓
-            </Button>
-          </Link>
+          <Button
+            className="flex items-center justify-center p-4 rounded-2xl bg-gray-900 hover:bg-gray-700 text-white transition-colors duration-200 whitespace-nowrap"
+            onClick={(e) => handleClick(e, "#carousel-banner")}
+          >
+            Retire ↓
+          </Button>
         </div>
       </div>
     </div>
