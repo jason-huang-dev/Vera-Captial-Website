@@ -12,15 +12,9 @@ type HeroProps = {
     e: React.MouseEvent<HTMLAnchorElement | HTMLButtonElement, MouseEvent>,
     url: string
   ) => void;
-  openNavigation: boolean;
-  toggleNavigation: () => void;
 };
 
-export default function Hero({
-  handleClick,
-  openNavigation,
-  toggleNavigation,
-}: HeroProps) {
+export default function Hero({ handleClick }: HeroProps) {
   return (
     <div className="relative bg-gradient-to-r from-blue-900 to-blue-600 min-h-[80vh] md:h-screen w-full flex items-center justify-center">
       {/* Background Image */}
