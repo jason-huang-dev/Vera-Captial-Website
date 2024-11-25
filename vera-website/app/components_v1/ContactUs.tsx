@@ -51,7 +51,7 @@ const ContactUs: React.FC = () => {
 
   return (
     <section
-      id="contactus"
+      id="contact"
       ref={ref}
       className={`py-16 bg-gray-50 dark:bg-gray-800 transition-opacity duration-700 ease-in-out ${
         isInView ? "animate-fadeInUp" : "opacity-0"
