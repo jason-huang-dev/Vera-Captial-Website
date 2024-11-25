@@ -33,12 +33,13 @@ export default function BannerComponent({
 
       {/* Logo */}
       <div className="relative z-10 flex flex-col items-center">
-        <div className="w-96 h-96 md:w-[140px] md:h-[140px] animate-fadeIn_2">
+        <div className="w-4/5 h-4/5 md:w-1/2 md:h-1/2">
           <Image
             src={logoImage}
             alt="Company Logo"
             layout="intrinsic"
-            objectFit="contain"
+            objectFit="cover"
+            className="animate-fadeIn_2"
           />
         </div>
         {title && <h1 className="mt-4 text-2xl md:text-4xl font-bold text-white">{title}</h1>}
