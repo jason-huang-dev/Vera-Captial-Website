@@ -21,7 +21,7 @@ export default function HeroImageWithReviews() {
   return (
     <section id="hero">
       {/* Hero */}
-      <div className="container py-24 lg:py-32">
+      <div className="container animate-fadeInUp py-24 lg:py-32">
         {/* Grid */}
         <div className="grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center">
           {/* Col */}

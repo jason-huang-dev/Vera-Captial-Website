@@ -26,35 +26,48 @@ export default function Home() {
 
   const handleClick: HandleClick = (e, url) => {
     e.preventDefault();
+
     if (openNavigation) {
       toggleNavigation();
     }
 
     if (url.startsWith("http")) {
+      // Open external links in a new tab
       window.open(url, "_blank");
     } else if (url === "/") {
+      // Navigate to the root path and reload
       window.history.pushState(null, "", "/");
       window.location.reload();
+    } else if (url.startsWith("#")) {
+      // Handle internal hash links
+      if (url === "#services-insure") {
+        setCurrentIndex(0);
+        const targetSection = document.querySelector<HTMLElement>("#services");
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: "smooth" });
+        }
+      } else if (url === "#services-invest") {
+        setCurrentIndex(1);
+        const targetSection = document.querySelector<HTMLElement>("#services");
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: "smooth" });
+        }
+      } else if (url === "#services-retire") {
+        setCurrentIndex(2);
+        const targetSection = document.querySelector<HTMLElement>("#services");
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: "smooth" });
+        }
+      } else {
+        // For other hash links like #hero, #services, #contactus
+        const targetSection = document.querySelector<HTMLElement>(url);
+        if (targetSection) {
+          targetSection.scrollIntoView({ behavior: "smooth" });
+        }
+      }
     } else {
-      // Update the currentIndex based on the URL
-      switch (url) {
-        case "#services-insure":
-          setCurrentIndex(0);
-          break;
-        case "#services-invest":
-          setCurrentIndex(1);
-          break;
-        case "#services-retire":
-          setCurrentIndex(2);
-          break;
-        default:
-          break;
-      }
-      // Scroll to the Services component
-      const targetSection = document.querySelector<HTMLElement>("#services");
-      if (targetSection) {
-        targetSection.scrollIntoView({ behavior: "smooth" });
-      }
+      // For any other cases, you might want to handle them here
+      console.warn(`Unhandled URL: ${url}`);
     }
   };
 

@@ -1,14 +1,22 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
 import { CalendarPlus } from "lucide-react";
+import useInView from "../hooks/useInView"; // Import the useInView hook
 
 interface CtaButtonProps {
   onClick?: () => void;
 }
 
 const CtaButton: React.FC<CtaButtonProps> = ({ onClick }) => {
+  const { ref, isInView } = useInView<HTMLDivElement>();
+
   return (
-    <section className="text-center py-24 ">
+    <section
+      ref={ref}
+      className={`text-center py-24 transition-opacity duration-700 ease-in-out ${
+        isInView ? "animate-fadeInUp" : "opacity-0"
+      }`}
+    >
       <h2 className="text-3xl text-white font-bold mb-10">
         Ready to Secure Your Financial Future?
       </h2>
