@@ -1,3 +1,5 @@
+// components_v2/ContactUs.tsx
+
 "use client";
 
 import React from "react";
@@ -15,6 +17,7 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import useInView from "../hooks/useInView"; // Import the useInView hook
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -43,8 +46,17 @@ const ContactUs: React.FC = () => {
     console.log(values);
   }
 
+  // Use the useInView hook to detect when the component is in view
+  const { ref, isInView } = useInView<HTMLDivElement>();
+
   return (
-    <section id="contactus" className="py-16 bg-gray-50 dark:bg-gray-800">
+    <section
+      id="contactus"
+      ref={ref}
+      className={`py-16 bg-gray-50 dark:bg-gray-800 transition-opacity duration-700 ease-in-out ${
+        isInView ? "animate-fadeInUp" : "opacity-0"
+      }`}
+    >
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-8 text-center">Contact Us</h2>
         <div className="grid md:grid-cols-2 gap-8">
@@ -54,6 +66,7 @@ const ContactUs: React.FC = () => {
                 onSubmit={form.handleSubmit(onSubmit)}
                 className="space-y-8"
               >
+                {/* Name Field */}
                 <FormField
                   control={form.control}
                   name="name"
@@ -67,6 +80,7 @@ const ContactUs: React.FC = () => {
                     </FormItem>
                   )}
                 />
+                {/* Email Field */}
                 <FormField
                   control={form.control}
                   name="email"
@@ -80,6 +94,7 @@ const ContactUs: React.FC = () => {
                     </FormItem>
                   )}
                 />
+                {/* Message Field */}
                 <FormField
                   control={form.control}
                   name="message"
@@ -97,6 +112,7 @@ const ContactUs: React.FC = () => {
                     </FormItem>
                   )}
                 />
+                {/* Submit Button */}
                 <Button type="submit">Send Message</Button>
               </form>
             </Form>

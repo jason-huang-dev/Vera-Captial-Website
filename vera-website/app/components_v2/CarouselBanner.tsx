@@ -87,7 +87,7 @@ const Services: React.FC<ServicesProps> = ({
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-center sm:text-left ">
                   {slide.title}
                 </h2>
-                <p className="mt-2 text-sm w-[45em]">{slide.description}</p>
+                <p className="mt-2 text-sm w-[90%]">{slide.description}</p>
                 {/* Phone Button */}
                 {isMobile ? (
                   <a
