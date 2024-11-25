@@ -44,7 +44,7 @@ const ContactUs: React.FC = () => {
   }
 
   return (
-    <section id="contact" className="py-16 bg-gray-50 dark:bg-gray-800">
+    <section id="contact" className="my-8 py-16 bg-gray-200 dark:bg-gray-800 rounded-lg">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-8 text-center">Contact Us</h2>
         <div className="grid md:grid-cols-2 gap-8">

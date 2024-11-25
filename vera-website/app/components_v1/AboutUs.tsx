@@ -3,7 +3,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const AboutUs: React.FC = () => {
   return (
-    <section className="py-16 bg-gray-50 dark:bg-gray-800">
+    <section className="my-8 py-16 bg-gray-50 dark:bg-gray-800 rounded-lg">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl font-bold mb-8 text-center">About Us</h2>
         <Card className="mb-8">
