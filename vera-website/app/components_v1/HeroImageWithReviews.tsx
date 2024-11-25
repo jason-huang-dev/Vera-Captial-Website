@@ -48,7 +48,7 @@ export default function HeroImageWithReviews() {
               {/* Schedule Appointment Button */}
               <Link href="/" passHref>
                 <Button
-                  className="bg-blue2 text-white p-4 rounded-lg"
+                  className="bg-blue2 hover:bg-blue-900 text-white p-4 rounded-lg transition-colors duration-200"
                   size="lg"
                 >
                   Schedule Appointment
@@ -64,7 +64,7 @@ export default function HeroImageWithReviews() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="bg-white flex items-center  transition-colors duration-200"
+                    className="bg-white hover:bg-gray-100 flex items-center transition-colors duration-200"
                   >
                     <Phone className="w-5 h-5 mr-2" />
                     Give us a call
@@ -74,7 +74,7 @@ export default function HeroImageWithReviews() {
                 <Button
                   size="lg"
                   onClick={handleButtonClick}
-                  className="flex items-center bg-white text-black transition-colors duration-200 hover:bg-slate-400"
+                  className="flex items-center bg-white  hover:bg-gray-100 text-black transition-colors duration-200"
                   aria-label={`Show phone number`}
                 >
                   <Phone className="w-5 h-5 mr-2" />

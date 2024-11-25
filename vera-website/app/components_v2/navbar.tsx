@@ -34,7 +34,7 @@ const Topbar: React.FC<TopbarProps> = ({
   const navigation: NavigationItem[] = [
     { id: 1, title: "Home", url: "#hero", onlyMobile: false },
     { id: 2, title: "Services", url: "#services", onlyMobile: false },
-    { id: 3, title: "Contact us", url: "#contact", onlyMobile: false },
+    { id: 3, title: "Contact us", url: "#contactus", onlyMobile: false },
   ];
 
   const versionOptions = [

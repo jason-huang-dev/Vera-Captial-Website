@@ -88,7 +88,7 @@ const Topbar: React.FC<TopbarProps> = ({
                     <a
                       key={option.href}
                       href={option.href}
-                      className={`block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 ${
+                      className={`block px-4 py-2 hover:bg-blue-600 dark:hover:bg-gray-700 ${
                         pathname === option.href ? "bg-blue-700" : ""
                       }`}
                     >
@@ -134,7 +134,7 @@ const Topbar: React.FC<TopbarProps> = ({
         <div className="flex-shrink-0">
           <button
             onClick={(e) => handleClick(e, "#join")}
-            className="flex items-center text-blue-50 justify-center bg-transparent border px-4 ml-4 py-2 rounded-2xl hover:bg-gray-400 dark:hover:bg-gray-800 transition-colors duration-200 whitespace-nowrap"
+            className="flex items-center text-blue-50 justify-center bg-transparent border px-4 ml-4 py-2 rounded-2xl hover:bg-blue-800 transition-colors duration-200 whitespace-nowrap"
           >
             Schedule Appointment
           </button>

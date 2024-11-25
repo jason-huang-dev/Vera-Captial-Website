@@ -1,29 +1,36 @@
-import { investment, women_planning, planning, taxes, accountant, social_security } from "./assets";
+import {
+  investment,
+  women_planning,
+  planning,
+  taxes,
+  accountant,
+  social_security,
+} from "./assets";
 
 export const COMPANY_INFO = {
-    ADDRESS: {
-      NAME: "Vera Capital Management",
-      STREET: "1 Mill Ridge Lane., Suite 201",
-      CITY: "Chester",
-      STATE: "NJ",
-      ZIP: "07930",
-    },
-    CONTACT: {
-      EMAIL: "avera@veracapitalmanagement.com",
-      PHONE: "908-888-2878",
-      FAX: "877-253-6960",
-    },
+  ADDRESS: {
+    NAME: "Vera Capital Management",
+    STREET: "1 Mill Ridge Lane., Suite 201",
+    CITY: "Chester",
+    STATE: "NJ",
+    ZIP: "07930",
+  },
+  CONTACT: {
+    EMAIL: "avera@veracapitalmanagement.com",
+    PHONE: "908-888-2878",
+    FAX: "877-253-6960",
+  },
 };
 
 export const SOCIAL_MEDIA_LINKS = {
-    FACEBOOK: "https://www.facebook.com/VeraCapMngt/",
-    LINKEDIN: "https://www.linkedin.com/in/allan-vera-0b9122122/",
-    TWITTER: "https://x.com/VeraCapitalMgmt?lang=en",
+  FACEBOOK: "https://www.facebook.com/VeraCapMngt/",
+  LINKEDIN: "https://www.linkedin.com/in/allan-vera-0b9122122/",
+  TWITTER: "https://x.com/VeraCapitalMgmt?lang=en",
 };
 
 export const IMPORTANT_LINKS = {
-FORM_CRS: "https://gwnsecurities.com/Content/documents/GWN_Form_CRS.pdf",
-FINRA_BROKERCHECK: "https://brokercheck.finra.org/individual/summary/5980333",
+  FORM_CRS: "https://gwnsecurities.com/Content/documents/GWN_Form_CRS.pdf",
+  FINRA_BROKERCHECK: "https://brokercheck.finra.org/individual/summary/5980333",
 };
 
 export const services = [
@@ -62,5 +69,35 @@ export const services = [
     description:
       "Women are more financially empowered than ever before. We help women through transitions like career shifts, divorce, or taking care of a parent, ensuring they have a plan in place to secure their future, no matter what life throws at them.",
     image: women_planning, // Add the appropriate image here
+  },
+];
+
+export const bannerCalltoAction = [
+  {
+    title: "Protect Your Future",
+    description: `
+      Secure your life and assets with our tailored insurance strategies. Through comprehensive insurance planning, we help you protect your retirement and fully leverage available benefits, including long-term care assistance. Additionally, our tax planning services aim to minimize tax burdens and establish a foundation for lasting savings through strategic advice.
+    `,
+    cta: "Plan Your Insurance Today",
+    image: planning,
+    id: "#services-insure",
+  },
+  {
+    title: "Build Your Wealth",
+    description: `
+      Invest in your dreams with personalized strategies that grow with you. We begin by understanding your goals, risk tolerance, and income needs, ensuring your journey starts with a deep comprehension of your unique situation. Our investment planning offers realistic, step-by-step strategies tailored to your financial needs, with adjustments made along the way to keep you on track.
+    `,
+    cta: "Start Investing Now",
+    image: investment,
+    id: "#services-invest",
+  },
+  {
+    title: "Retire Comfortably",
+    description: `
+      Maximize your benefits and enjoy a secure retirement. Our social security maximization strategies help you make the most of your benefits for a comfortable retirement. We also specialize in empowering women through life's transitions, ensuring financial security at every stage.
+    `,
+    cta: "Plan Your Retirement",
+    image: women_planning,
+    id: "#services-retire",
   },
 ];

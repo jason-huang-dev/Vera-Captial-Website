@@ -1,6 +1,6 @@
 "use client";
 
-import React from 'react';
+import React from "react";
 
 // Define the props for the MenuSvg component
 interface MenuSvgProps {
@@ -8,12 +8,17 @@ interface MenuSvgProps {
   toggleNavigation: () => void;
 }
 
-const MenuSvg: React.FC<MenuSvgProps> = ({ openNavigation, toggleNavigation }) => {
+const MenuSvg: React.FC<MenuSvgProps> = ({
+  openNavigation,
+  toggleNavigation,
+}) => {
   return (
     <button
       className="px-4 my-2 ml-auto lg:hidden hover-menu"
       onClick={toggleNavigation}
-      aria-label={openNavigation ? "Close navigation menu" : "Open navigation menu"}
+      aria-label={
+        openNavigation ? "Close navigation menu" : "Open navigation menu"
+      }
       aria-expanded={openNavigation}
     >
       <svg
@@ -27,8 +32,8 @@ const MenuSvg: React.FC<MenuSvgProps> = ({ openNavigation, toggleNavigation }) =
       >
         <rect
           className={`transition-all origin-center menu-rect ${
-            openNavigation ? 'rotate-45' : ''
-          } fill-black dark:fill-white`}
+            openNavigation ? "rotate-45" : ""
+          } fill-white`}
           y={openNavigation ? "5" : "0"}
           width="20"
           height="2"
@@ -37,8 +42,8 @@ const MenuSvg: React.FC<MenuSvgProps> = ({ openNavigation, toggleNavigation }) =
         />
         <rect
           className={`transition-all origin-center menu-rect ${
-            openNavigation ? '-rotate-45' : ''
-          } fill-black dark:fill-white`}
+            openNavigation ? "-rotate-45" : ""
+          } fill-white`}
           y={openNavigation ? "5" : "10"}
           width="20"
           height="2"
