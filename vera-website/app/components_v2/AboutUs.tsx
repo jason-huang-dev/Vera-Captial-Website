@@ -1,43 +1,69 @@
-import React from "react";
-import { Card, CardContent } from "@/components/ui/card";
+import React, { useState } from "react";
+
+import { Button } from "@/components/ui/button";
+import { Phone } from "lucide-react";
+import { COMPANY_INFO } from "../constants";
+import useIsMobile from "../hooks/useIsMobile";
+import { accountant, taxes } from "../assets";
+import Link from "next/link";
 
 const AboutUs: React.FC = () => {
+  const isMobile = useIsMobile();
+  const [showPhone, setShowPhone] = useState(false);
+
+  const handleButtonClick = () => {
+    if (!isMobile) {
+      setShowPhone(true);
+    }
+  };
+
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-16 bg-blue-900/20">
       <div className="container mx-auto px-4">
         {/* First Section */}
         <div className="flex flex-col md:flex-row items-center mb-16">
           <div className="w-full md:w-1/2 text-center md:text-left mb-8 md:mb-0">
-            <h2 className="text-2xl font-bold mb-4">
+            <h2 className="text-2xl font-semibold mb-4">
               Invest when you’re ready.
             </h2>
             <p className="text-gray-700 mb-4">
               Dedicate part of each paycheck to big goals, such as retirement or
               education, in accounts tailored for the long term. Feel confident
-              about investing:
+              about investing with us
             </p>
-            <ul className="text-blue-600 space-y-2">
-              <li>
-                <a href="#" className="hover:underline">
-                  See 3 steps to start investing
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  How to know when you’re ready
-                </a>
-              </li>
-              <li>
-                <a href="#" className="hover:underline">
-                  How investing works
-                </a>
-              </li>
-            </ul>
+            {/* Phone Button */}
+            {isMobile ? (
+              <a
+                href={`tel:${COMPANY_INFO.CONTACT.PHONE}`}
+                aria-label={`Call ${COMPANY_INFO.CONTACT.PHONE}`}
+              >
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="bg-white text-black mb-10 mt-5 flex items-center transition-colors duration-200"
+                >
+                  <Phone className="w-5 h-5 mr-2" />
+                  Give us a call
+                </Button>
+              </a>
+            ) : (
+              <Button
+                size="lg"
+                onClick={handleButtonClick}
+                className="flex items-center bg-white my-5 text-black transition-colors duration-200 hover:bg-slate-400"
+                aria-label={`Show phone number`}
+              >
+                <Phone className="w-5 h-5 mr-2" />
+                {showPhone ? COMPANY_INFO.CONTACT.PHONE : "Give us a call"}
+              </Button>
+            )}
           </div>
           <div className="w-full md:w-1/2 flex justify-center">
             <div className="rounded-full overflow-hidden w-48 h-48">
               <img
-                src="/path-to-image1.jpg"
+                src={
+                  typeof accountant === "string" ? accountant : accountant.src
+                }
                 alt="Invest when you’re ready"
                 className="object-cover w-full h-full"
               />
@@ -50,7 +76,7 @@ const AboutUs: React.FC = () => {
           <div className="w-full md:w-1/2 flex justify-center">
             <div className="rounded-full overflow-hidden w-48 h-48">
               <img
-                src="/path-to-image2.jpg"
+                src={typeof taxes === "string" ? taxes : taxes.src}
                 alt="Retire on your terms"
                 className="object-cover w-full h-full"
               />
@@ -60,29 +86,15 @@ const AboutUs: React.FC = () => {
             <h2 className="text-2xl font-bold mb-4">Retire on your terms.</h2>
             <p className="text-gray-700 mb-4">
               You want to live well when you retire—and while you’re earning it.
-              Save a little each month and increase it over time. Your workplace
-              may offer a plan to help.
+              Save a little each month and increase it over time.
             </p>
-            <a href="#" className="text-blue-600 hover:underline font-medium">
-              Read 5 retirement savings strategies
-            </a>
-            <div className="mt-4">
-              <Card className="w-64 mx-auto md:mx-0 shadow-lg">
-                <CardContent>
-                  <h3 className="text-lg font-bold">
-                    Check your retirement readiness
-                  </h3>
-                  <p className="text-gray-700 mb-4">
-                    Find out if your retirement savings are on track.
-                  </p>
-                  <a
-                    href="#"
-                    className="text-blue-600 font-medium hover:underline"
-                  >
-                    Learn More →
-                  </a>
-                </CardContent>
-              </Card>
+            {/* Call-to-Action Button */}
+            <div className="flex justify-center sm:justify-start">
+              <Link href="/">
+                <Button className="flex items-center justify-center px-4 py-4 rounded-lg bg-white hover:bg-gray-300 text-black transition-colors duration-200 whitespace-nowrap">
+                  Schedule Appointment
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
